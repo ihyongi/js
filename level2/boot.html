@@ -104,19 +104,50 @@
         //다시 누르면 안보이게..? slideToggle
         
         //유효성검사..
+            var 입력한이메일 =$('email').val();
           $('form').on('submit',function(e){
-              if($('#email').val()==''){
-              //폼의 전송을 막는코드
-                e.preventDefault();
-                $('#email-alert').show();
-                  
-              }if($('#password').val()==''){
-                  e.preventDefault();
-                  $('#password-alert').show();
-                  
-              }
+              if(/\S+@\S+\.\S+/.test(입력한이메일)==false){
+                    e.preventDefault();
+                 }else if(입력한이메일==''){
+                    e.preventDefault();
+                    }
+              
+            var 입력한패스워드 =$('password').val();
+          $('form').on('submit',function(e){
+              if(/[A-Z]+ /.test(입력한패스워드)==false){
+                 e.preventDefault();
+                 }
+              
+              
+              
+              
+              
+//              if($('#email').val()==''){
+//              //폼의 전송을 막는코드
+//                e.preventDefault();
+//                $('#email-alert').show();
+//                  
+//              }if($('#password').val()==''){
+//                  e.preventDefault();
+//                  $('#password-alert').show(); 
+//              }
+//
+//             });
+          
+//          정규식 표현
+//          /abc/.test('abcdefg'); //true
+//        /\S/.test('#'); //특수문자포함 모든 글자를 표현할 때의 식
+//          이메일 정규식
+//          /\S+@\S+\.\S+/.test('1he8323@gmail.com');
 
-             })
+              
+//1.구글에서 찾아본 이메일정규식
+//var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+//2.비밀번호 정규식
+//var regExp = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/; 
+//이메일형식과 공백검사 동시에..?
+          
+          
           
       </script>
     
